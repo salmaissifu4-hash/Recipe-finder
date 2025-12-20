@@ -1,0 +1,23 @@
+import axios from 'axios';
+
+async function fetchRecipes(term = '', id = null, category = '') {
+    let endpoint = '';
+
+    if (id) {
+        endpoint = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`;
+    } else if (category) {
+        endpoint = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`;
+    } else {
+        endpoint = `https://www.themealdb.com/api/json/v1/1/search.php?s=${term}`;
+    }
+
+    try {
+        const response = await axios.get(endpoint);
+        return response.data.meals || [];
+    } catch (error) {
+        console.error('Error fetching recipes:', error);
+        return [];
+    }
+}
+
+export default fetchRecipes;

@@ -1,0 +1,30 @@
+import axios from "axios";
+
+const BASE_URL = "https://www.themealdb.com/api/json/v1/1";
+
+export const listCategories = async () => {
+  try {
+    const response = await axios.get(`${BASE_URL}/categories.php`);
+    return response.data.categories || [];
+  } catch (error) {
+    return [];
+  }
+};
+
+export const filterByCategory = async (category) => {
+  try {
+    const response = await axios.get(`${BASE_URL}/filter.php?c=${category}`);
+    return response.data.meals || [];
+  } catch (error) {
+    return [];
+  }
+};
+
+export const fetchMealDetails = async (mealId) => {
+  try {
+    const response = await axios.get(`${BASE_URL}/lookup.php?i=${mealId}`);
+    return response.data.meals ? response.data.meals[0] : null;
+  } catch (error) {
+    return null;
+  }
+};
