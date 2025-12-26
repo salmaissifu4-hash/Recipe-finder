@@ -7,13 +7,11 @@ A modern, responsive recipe discovery application designed to help you find, sav
 ### 🔍 Core Functionality
 - **Smart Recipe Search** - Search recipes by name or ingredient with real-time results
 - **Detailed Recipe View** - Complete cooking instructions, ingredients list with measurements, and instructional videos
-- **Nutrition Information** - View calories, protein, carbs, fat, fiber, and sodium per serving (powered by Edamam API)
 - **Recipe Categories** - Browse recipes by cuisine categories (Vegetarian, Vegan, Seafood, Desserts, and more)
 - **Original Recipe Links** - Direct links to original recipe sources
 
 ### 💚 Dietitian's Corner
 - **Healthy Meals Section** - Curated collection of balanced recipes from diverse categories (Vegetarian, Vegan, Chicken, Seafood, Beef, Breakfast, Lamb, and Sides)
-- **Nutrition Analysis** - Detailed nutritional breakdown for informed meal planning
 - **Featured Picks** - Dietitian-recommended healthy recipes on the home page
 
 ### 📋 Personal Organization
@@ -33,9 +31,7 @@ A modern, responsive recipe discovery application designed to help you find, sav
 - **Styling:** Tailwind CSS 4.1.18
 - **Routing:** React Router DOM 7.10.1
 - **HTTP Client:** Axios 1.13.2
-- **APIs:** 
-  - **TheMealDB API** - Free recipe database (no API key required)
-  - **Edamam API** - Nutrition analysis (requires free API key)
+- **API:** TheMealDB API - Free recipe database (no API key required)
 - **Icons:** Font Awesome 6.4.0
 - **Fonts:** Google Fonts (Poppins, Playfair Display)
 
@@ -54,24 +50,7 @@ A modern, responsive recipe discovery application designed to help you find, sav
 
 3. **Configure APIs**
    
-   **TheMealDB API** (Required - No Setup Needed)
-   - The app uses the free public TheMealDB API for recipe data
-   - No API key required - works out of the box!
-   
-   **Edamam API** (Optional - For Nutrition Data)
-   - Sign up at https://developer.edamam.com/
-   - Get your APP_ID and APP_KEY (free tier: 100 calls/month)
-   - Create a `.env` file in the project root:
-     ```
-     VITE_EDAMAM_APP_ID=your_app_id_here
-     VITE_EDAMAM_APP_KEY=your_app_key_here
-     ```
-   - See [EDAMAM_SETUP.md](EDAMAM_SETUP.md) for detailed instructions
-   - Note: The app works without Edamam API, but nutrition info won't display
-
-4. **Start the development server**
-   ```bash
-   npm run dev
+   **m run dev
    ```
 
 5. **Open your browser**
@@ -91,7 +70,7 @@ The optimized production files will be in the `dist` folder.
 
 1. **Search for Recipes** - Use the search bar to find recipes by name or ingredient
 2. **Browse Categories** - Click "Categories" to explore recipes by cuisine type
-3. **Explore Healthy Options** - Visit "Healthy Meals" for dietitian-curated nutritious recipes
+4. **Explore Healthy Options** - Visit "Healthy Meals" for dietitian-curated nutritious recipes
 4. **View Recipe Details** - Click any recipe card to see full instructions, ingredients, and video tutorials
 5. **Save Favorites** - Click the heart icon to save recipes to your favorites
 6. **Create Shopping Lists** - Add ingredients to your shopping list directly from recipe pages
@@ -128,7 +107,6 @@ Registered Dietitian
 ## 🙏 Acknowledgments
 
 - Recipe data provided by [TheMealDB API](https://www.themealdb.com/) - A free open recipe database
-- Nutrition analysis by [Edamam API](https://developer.edamam.com/)
 - Icons by [Font Awesome](https://fontawesome.com/)
 - Fonts by [Google Fonts](https://fonts.google.com/)
 

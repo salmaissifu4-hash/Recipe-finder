@@ -2,12 +2,10 @@ import { useEffect, useState, useContext } from "react";
 import { useParams, Link } from "react-router-dom";
 import { FavoritesContext } from "../context/FavoritesContext";
 import { ShoppingContext } from "../context/ShoppingContext";
-import { getNutritionData, formatNutrients } from "../services/edamamApi";
 
 export default function RecipeDetailsPage() {
   const { id } = useParams();
   const [recipe, setRecipe] = useState(null);
-  const [nutrition, setNutrition] = useState(null);
   const { toggleFavorite } = useContext(FavoritesContext);
   const { addItems } = useContext(ShoppingContext);
 
@@ -21,18 +19,7 @@ export default function RecipeDetailsPage() {
       const recipeData = data.meals?.[0] ?? null;
       setRecipe(recipeData);
 
-      if (recipeData) {
-        const ingredientsList = [];
-        for (let i = 1; i <= 20; i++) {
-          const ingredient = recipeData[`strIngredient${i}`];
-          const measure = recipeData[`strMeasure${i}`];
-          if (ingredient && ingredient.trim()) {
-            ingredientsList.push(`${measure} ${ingredient}`.trim());
-          }
-        }
-        const nutritionData = await getNutritionData(ingredientsList);
-        setNutrition(formatNutrients(nutritionData));
-      }
+
     })();
   }, [id]);
 
@@ -93,44 +80,6 @@ export default function RecipeDetailsPage() {
               <i className="fas fa-shopping-cart mr-2"></i>Add to List
             </button>
           </div>
-
-          {nutrition && (
-            <div className="mb-6 bg-gradient-to-r from-green-50 to-orange-50 dark:from-gray-700 dark:to-gray-700 rounded-xl p-4 border border-green-200 dark:border-gray-600">
-              <h3 className="text-base md:text-lg font-bold mb-3 text-gray-800 dark:text-white flex items-center gap-2">
-                <i className="fas fa-chart-pie text-green-600 dark:text-green-400"></i>
-                Nutrition Facts (Per Serving)
-              </h3>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
-                <div className="bg-white dark:bg-gray-800 rounded-lg p-3 text-center">
-                  <p className="text-2xl font-bold text-orange-600 dark:text-orange-400">{nutrition.calories}</p>
-                  <p className="text-xs text-gray-600 dark:text-gray-400">Calories</p>
-                </div>
-                <div className="bg-white dark:bg-gray-800 rounded-lg p-3 text-center">
-                  <p className="text-2xl font-bold text-green-600 dark:text-green-400">{nutrition.protein}g</p>
-                  <p className="text-xs text-gray-600 dark:text-gray-400">Protein</p>
-                </div>
-                <div className="bg-white dark:bg-gray-800 rounded-lg p-3 text-center">
-                  <p className="text-2xl font-bold text-blue-600 dark:text-blue-400">{nutrition.carbs}g</p>
-                  <p className="text-xs text-gray-600 dark:text-gray-400">Carbs</p>
-                </div>
-                <div className="bg-white dark:bg-gray-800 rounded-lg p-3 text-center">
-                  <p className="text-2xl font-bold text-yellow-600 dark:text-yellow-400">{nutrition.fat}g</p>
-                  <p className="text-xs text-gray-600 dark:text-gray-400">Fat</p>
-                </div>
-                <div className="bg-white dark:bg-gray-800 rounded-lg p-3 text-center">
-                  <p className="text-2xl font-bold text-purple-600 dark:text-purple-400">{nutrition.fiber}g</p>
-                  <p className="text-xs text-gray-600 dark:text-gray-400">Fiber</p>
-                </div>
-                <div className="bg-white dark:bg-gray-800 rounded-lg p-3 text-center">
-                  <p className="text-2xl font-bold text-red-600 dark:text-red-400">{nutrition.sodium}mg</p>
-                  <p className="text-xs text-gray-600 dark:text-gray-400">Sodium</p>
-                </div>
-              </div>
-              <p className="text-xs text-gray-500 dark:text-gray-400 mt-3 text-center">
-                <i className="fas fa-utensils mr-1"></i>Servings: {nutrition.servings}
-              </p>
-            </div>
-          )}
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
             <div className="bg-orange-50 dark:bg-gray-700 rounded-xl p-4 md:p-5">
