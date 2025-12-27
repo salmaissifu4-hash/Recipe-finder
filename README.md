@@ -1,6 +1,6 @@
 # 🍴 Recipe Finder
 
-A modern, responsive recipe discovery application designed to help you find, save, and organize delicious recipes. Curated by a Registered Dietitian, this app features healthy meal options alongside a vast collection of international cuisines.
+A modern, responsive recipe discovery application designed by a Registered Dietitian to help you find, save, and organize delicious recipes. Features a curated collection of healthy meal options alongside international cuisines.
 
 ## ✨ Features
 
@@ -11,8 +11,9 @@ A modern, responsive recipe discovery application designed to help you find, sav
 - **Original Recipe Links** - Direct links to original recipe sources
 
 ### 💚 Dietitian's Corner
-- **Healthy Meals Section** - Curated collection of balanced recipes from diverse categories (Vegetarian, Vegan, Chicken, Seafood, Beef, Breakfast, Lamb, and Sides)
+- **Healthy Meals Section** - Curated collection of balanced recipes from diverse categories
 - **Featured Picks** - Dietitian-recommended healthy recipes on the home page
+- **Multiple Categories** - Vegetarian, Vegan, Chicken, Seafood, Beef, Breakfast, Desserts, and more
 
 ### 📋 Personal Organization
 - **Favorites** - Save your favorite recipes for quick access
@@ -31,9 +32,10 @@ A modern, responsive recipe discovery application designed to help you find, sav
 - **Styling:** Tailwind CSS 4.1.18
 - **Routing:** React Router DOM 7.10.1
 - **HTTP Client:** Axios 1.13.2
-- **API:** TheMealDB API - Free recipe database (no API key required)
+- **API:** TheMealDB API - Free recipe database with extensive collection
 - **Icons:** Font Awesome 6.4.0
 - **Fonts:** Google Fonts (Poppins, Playfair Display)
+- **Images:** Unsplash (Background imagery)
 
 ## 📦 Installation
 
@@ -48,12 +50,12 @@ A modern, responsive recipe discovery application designed to help you find, sav
    npm install
    ```
 
-3. **Configure APIs**
-   
-   **m run dev
+3. **Start the development server**
+   ```bash
+   npm run dev
    ```
 
-5. **Open your browser**
+4. **Open your browser**
    ```
    Navigate to http://localhost:5173
    ```
@@ -94,7 +96,7 @@ As a Registered Dietitian-developed application, Recipe Finder emphasizes nutrit
 Easily manage your recipe collection with favorites and shopping lists that persist across sessions using local storage.
 
 ### Beautiful Interface
-Modern design with gradient color schemes, smooth transitions, and an intuitive user experience across all devices.
+Modern design with food photography backgrounds, smooth transitions, and an intuitive user experience across all devices.
 
 ## 👩‍💻 Author
 
@@ -106,7 +108,8 @@ Registered Dietitian
 
 ## 🙏 Acknowledgments
 
-- Recipe data provided by [TheMealDB API](https://www.themealdb.com/) - A free open recipe database
+- Recipe data provided by [TheMealDB API](https://www.themealdb.com/) - Free open recipe database
+- Background images from [Unsplash](https://unsplash.com/)
 - Icons by [Font Awesome](https://fontawesome.com/)
 - Fonts by [Google Fonts](https://fonts.google.com/)
 

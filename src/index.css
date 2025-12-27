@@ -31,3 +31,7 @@
   --color-black: #000000;
 }
 
+body.dark {
+  background: linear-gradient(135deg, rgba(17, 24, 39, 0.95) 0%, rgba(31, 41, 55, 0.95) 50%, rgba(55, 65, 81, 0.95) 100%), 
+              url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1920&q=80') center/cover fixed !important;
+}
