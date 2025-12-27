@@ -42,17 +42,29 @@ const RecipeDetails = ({ recipe }) => {
         Add Ingredients to Shopping List
       </button>
 
-      {recipe.strYoutube && (
-        <div className="mt-8">
-          <h2 className="text-xl font-semibold">Video Tutorial:</h2>
-          <iframe
-            className="mt-4 w-full rounded"
-            height="315"
-            src={`https://www.youtube.com/embed/${recipe.strYoutube.split('v=')[1]}`}
-            title="YouTube tutorial"
-          />
-        </div>
-      )}
+      {recipe.strYoutube && (() => {
+        const getYoutubeId = (url) => {
+          if (!url) return null;
+          const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+          const match = url.match(regExp);
+          return (match && match[2].length === 11) ? match[2] : null;
+        };
+        const youtubeId = getYoutubeId(recipe.strYoutube);
+        return youtubeId ? (
+          <div className="mt-8">
+            <h2 className="text-xl font-semibold">Video Tutorial:</h2>
+            <iframe
+              className="mt-4 w-full rounded"
+              height="315"
+              src={`https://www.youtube.com/embed/${youtubeId}`}
+              title="YouTube tutorial"
+              allowFullScreen
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              frameBorder="0"
+            />
+          </div>
+        ) : null;
+      })()}
 
       {recipe.strSource && (
         <div className="mt-8">
