@@ -2,6 +2,8 @@
 
 A modern, responsive recipe discovery application designed by a Registered Dietitian to help you find, save, and organize delicious recipes. Features a curated collection of healthy meal options alongside international cuisines.
 
+🌐 **Live Demo:** [https://nouribloomrecipe-finder.netlify.app](https://nouribloomrecipe-finder.netlify.app)
+
 ## ✨ Features
 
 ### 🔍 Core Functionality
